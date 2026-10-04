@@ -88,7 +88,10 @@ EVENTS: list[EventDef] = []
 # category X", it never hardcodes what the prefixes themselves are.
 
 # Prefixes for checks.
-LOCATION_ITEM_PREFIXES: tuple[str, ...] = ("level:",)
+LOCATION_ITEM_PREFIXES: tuple[str, ...] = (
+  "level:",
+  "?:",
+)
 
 # Prefixes for items that are logic-only events (not real placed locations).
 EVENT_ITEM_PREFIXES: tuple[str, ...] = (

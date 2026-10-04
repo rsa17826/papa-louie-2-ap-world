@@ -224,6 +224,14 @@ PROG: list[ProgressionNode] = [
     ],
     "receive": [
       "char:prudence",
+    ],
+  },
+  {
+    "room": "level1",
+    "requires": [
+      [],
+    ],
+    "receive": [
       "char:taylor",
     ],
   },
@@ -662,6 +670,17 @@ PROG: list[ProgressionNode] = [
     "room": "level8",
     "requires": [
       [
+        "move:walljump",
+      ],
+    ],
+    "receive": [
+      "char:rico",
+    ],
+  },
+  {
+    "room": "level8",
+    "requires": [
+      [
         "move:crawl",
       ],
     ],
@@ -709,6 +728,26 @@ PROG: list[ProgressionNode] = [
     ],
     "receive": [
       "char:papa louie",
+    ],
+  },
+  {
+    "room": "menu",
+    "requires": [
+      [],
+    ],
+    "receive": [
+      # TODO where this at?
+      "char:xandra",
+    ],
+  },
+  {
+    "room": "menu",
+    "requires": [
+      [],
+    ],
+    "receive": [
+      "char:marty",
+      "char:rita",
     ],
   },
 ]
