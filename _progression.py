@@ -123,12 +123,26 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "char:marty",
+      ],
+      [
         "char:rita",
+      ],
+      [
         "char:prudence",
+      ],
+      [
         "char:taylor",
+      ],
+      [
         "char:clover",
+      ],
+      [
         "char:mindy",
+      ],
+      [
         "char:akari",
+      ],
+      [
         "char:zoe",
       ],
     ],
@@ -141,7 +155,11 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "char:big pauly",
+      ],
+      [
         "char:kahuna",
+      ],
+      [
         "char:kingsley",
       ],
     ],
@@ -154,7 +172,11 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "char:ninjoy",
+      ],
+      [
         "char:penny",
+      ],
+      [
         "char:sarge fan",
       ],
     ],
@@ -167,7 +189,11 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "char:james",
+      ],
+      [
         "char:captain cori",
+      ],
+      [
         "char:rico",
       ],
     ],
@@ -180,7 +206,11 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "char:scooter",
+      ],
+      [
         "char:connor",
+      ],
+      [
         "char:peggy",
       ],
     ],
@@ -193,7 +223,11 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "char:georgito",
+      ],
+      [
         "char:yippy",
+      ],
+      [
         "char:greg",
       ],
     ],
@@ -207,9 +241,17 @@ PROG: list[ProgressionNode] = [
       [
         # TODO weapon stun only - see if this changes anything anywhere
         "char:boomer",
+      ],
+      [
         "char:professor fitz",
+      ],
+      [
         "char:foodini",
+      ],
+      [
         "char:papa louie",
+      ],
+      [
         "char:xandra",
       ],
     ],
