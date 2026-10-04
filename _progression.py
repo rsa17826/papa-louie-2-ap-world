@@ -459,4 +459,134 @@ PROG: list[ProgressionNode] = [
       "?:100 coins",
     ],
   },
+  {
+    "room": "level5",
+    "requires": [
+      [
+      ],
+    ],
+    "receive": [
+      "char:scooter",
+    ],
+  },
+  {
+    "room": "level5",
+    "requires": [
+      [
+        "move:dbjump",
+      ],
+    ],
+    "receive": [
+      "char:kingsley",
+    ],
+  },
+  {
+    "room": "level5",
+    "requires": [
+      [
+        "move:push",
+      ],
+    ],
+    "receive": [
+      "char:connor",
+    ],
+  },
+  {
+    "room": "level5",
+    "requires": [
+      [
+        "move:stomp",
+      ],
+    ],
+    "receive": [
+      "?:5 worms",
+    ],
+  },
+  {
+    "room": "level5",
+    "requires": [
+      [
+        "move:glide",
+      ],
+    ],
+    "receive": [
+      "?:8 burgers",
+    ],
+  },
+  {
+    "room": "level5",
+    "requires": [
+      [
+        "move:walljump",
+      ],
+    ],
+    "receive": [
+      "?:100 coins",
+    ],
+  },
+  {
+    "room": "level6",
+    "requires": [
+      [
+      ],
+    ],
+    "receive": [
+      "char:james",
+    ],
+  },
+  {
+    "room": "level6",
+    "requires": [
+      [
+        "move:push",
+      ],
+    ],
+    "receive": [
+      "char:greg",
+    ],
+  },
+  {
+    "room": "level6",
+    "requires": [
+      [
+        "move:walljump",
+      ],
+    ],
+    "receive": [
+      "char:captain cori",
+    ],
+  },
+  {
+    "room": "level6",
+    "requires": [
+      [
+        "move:glide",
+      ],
+    ],
+    "receive": [
+      "?:5 balloons",
+    ],
+  },
+  {
+    "room": "level6",
+    "requires": [
+      [
+        "move:crawl",
+      ],
+    ],
+    "receive": [
+      "?:10 burgers",
+    ],
+  },
+  {
+    "room": "level6",
+    "requires": [
+      [
+        "move:stomp",
+      ],
+    ],
+    "receive": [
+      "?:100 coins",
+    ],
+  },
 ]
