@@ -131,7 +131,7 @@ LINKED_EVENT_TEMPLATES: dict[str, str] = {}
 # gated by an option (rule is then just always-True).
 COMPLETION_OPTIONS: dict[str, list[list[str]]] = {
   "all_levels_complete": [
-    [f"level:level{i + 1}" for i in range(5)],
+    [f"level:level{i}" for i in range(1, 11, 1)],
   ]
 }
 
