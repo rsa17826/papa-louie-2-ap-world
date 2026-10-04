@@ -118,6 +118,105 @@ PROG: list[ProgressionNode] = [
       "flag:beat level10",
     ],
   },
+  {
+    "room": "menu",
+    "requires": [
+      [
+        "char:marty",
+        "char:rita",
+        "char:prudence",
+        "char:taylor",
+        "char:clover",
+        "char:mindy",
+        "char:akari",
+        "char:zoe",
+      ],
+    ],
+    "receive": [
+      "move:nothing",
+    ],
+  },
+  {
+    "room": "menu",
+    "requires": [
+      [
+        "char:big pauly",
+        "char:kahuna",
+        "char:kingsley",
+      ],
+    ],
+    "receive": [
+      "move:stomp",
+    ],
+  },
+  {
+    "room": "menu",
+    "requires": [
+      [
+        "char:ninjoy",
+        "char:penny",
+        "char:sarge fan",
+      ],
+    ],
+    "receive": [
+      "move:walljump",
+    ],
+  },
+  {
+    "room": "menu",
+    "requires": [
+      [
+        "char:james",
+        "char:captain cori",
+        "char:rico",
+      ],
+    ],
+    "receive": [
+      "move:push",
+    ],
+  },
+  {
+    "room": "menu",
+    "requires": [
+      [
+        "char:scooter",
+        "char:connor",
+        "char:peggy",
+      ],
+    ],
+    "receive": [
+      "move:dbjump",
+    ],
+  },
+  {
+    "room": "menu",
+    "requires": [
+      [
+        "char:georgito",
+        "char:yippy",
+        "char:greg",
+      ],
+    ],
+    "receive": [
+      "move:crawl",
+    ],
+  },
+  {
+    "room": "menu",
+    "requires": [
+      [
+        # TODO weapon stun only - see if this changes anything anywhere
+        "char:boomer",
+        "char:professor fitz",
+        "char:foodini",
+        "char:papa louie",
+        "char:xandra",
+      ],
+    ],
+    "receive": [
+      "move:glide",
+    ],
+  },
 ]
 # TODO
 # move:push
