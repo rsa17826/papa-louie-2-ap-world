@@ -332,8 +332,7 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level3",
     "requires": [
-      [
-      ],
+      [],
     ],
     "receive": [
       "char:boomer",
@@ -397,8 +396,7 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level4",
     "requires": [
-      [
-      ],
+      [],
     ],
     "receive": [
       "char:georgito",
@@ -462,8 +460,7 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level5",
     "requires": [
-      [
-      ],
+      [],
     ],
     "receive": [
       "char:scooter",
@@ -527,8 +524,7 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level6",
     "requires": [
-      [
-      ],
+      [],
     ],
     "receive": [
       "char:james",
@@ -587,6 +583,132 @@ PROG: list[ProgressionNode] = [
     ],
     "receive": [
       "?:100 coins",
+    ],
+  },
+  {
+    "room": "level7",
+    "requires": [
+      [],
+    ],
+    "receive": [
+      "char:ninjoy",
+    ],
+  },
+  {
+    "room": "level7",
+    "requires": [
+      [
+        "move:walljump",
+      ],
+    ],
+    "receive": [
+      "char:peggy",
+    ],
+  },
+  {
+    "room": "level7",
+    "requires": [
+      [
+        "move:stomp",
+      ],
+    ],
+    "receive": [
+      "char:penny",
+    ],
+  },
+  {
+    "room": "level7",
+    "requires": [
+      [
+        "move:glide",
+      ],
+    ],
+    "receive": [
+      "?:5 cans",
+    ],
+  },
+  {
+    "room": "level7",
+    "requires": [
+      [
+        "move:push",
+      ],
+    ],
+    "receive": [
+      "?:13 burgers",
+    ],
+  },
+  {
+    "room": "level7",
+    "requires": [
+      [
+        "move:dbjump",
+      ],
+    ],
+    "receive": [
+      "?:100 coins",
+    ],
+  },
+  {
+    "room": "level8",
+    "requires": [
+      [],
+    ],
+    "receive": [
+      "char:sarge fan",
+    ],
+  },
+  {
+    "room": "level8",
+    "requires": [
+      [
+        "move:crawl",
+      ],
+    ],
+    "receive": [
+      "char:zoe",
+    ],
+  },
+  {
+    "room": "level8",
+    "requires": [
+      [
+        "move:stomp",
+      ],
+    ],
+    "receive": [
+      "?:5 onion coins",
+    ],
+  },
+  {
+    "room": "level8",
+    "requires": [
+      [
+        "move:dbjump",
+      ],
+    ],
+    "receive": [
+      "?:12 burgers",
+    ],
+  },
+  {
+    "room": "level8",
+    "requires": [
+      [
+        "move:glide",
+      ],
+    ],
+    "receive": [
+      "?:100 coins",
+    ],
+  },
+  {
+    "room": "level9",
+    "requires": [
+      [],
+    ],
+    "receive": [
+      "char:papa louie",
     ],
   },
 ]
