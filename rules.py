@@ -43,8 +43,8 @@ def set_all_location_rules(world: World) -> None:
 
       sub_rule: Rule | None = None
       for item in clean_items:
-        if item.startswith("flag:starCanBeGot"):
-          temprule = Has("flag:starCanBeGot", int(item.split("#")[1]))
+        if "#" in item:
+          temprule = Has(item.split("#")[0], int(item.split("#")[1]))
         else:
           temprule = Has(item)
 
@@ -56,7 +56,6 @@ def set_all_location_rules(world: World) -> None:
 
     if allConditions:
       rule = reduce(lambda a, s: a | s, allConditions)
-
       for itemInfo in node["receive"]:
         if itemInfo.startswith(data.LOCATION_ITEM_PREFIXES + data.EVENT_ITEM_PREFIXES):
           loc_name = f"{room} - {itemInfo}"
@@ -78,10 +77,16 @@ def set_all_location_rules(world: World) -> None:
 def set_completion_condition(world: World) -> None:
   rule: Rule[World] = True_()
 
-  option_name = data.COMPLETION_OPTION_NAME
-  if option_name is not None and getattr(world.options, option_name):
-    for item in data.COMPLETION_REQUIRED_ITEMS:
-      rule &= Has(item)
+  for option_name in data.COMPLETION_OPTIONS:
+    if getattr(world.options, option_name):
+      for group in data.COMPLETION_OPTIONS[option_name]:
+        tempRule: Rule[World] = True_()
+        for item in group:
+          tempRule &= Has(item)
+
+        rule |= tempRule
 
 
+
+  # print(rule, "rulerulerulerule")
   world.set_completion_rule(rule)

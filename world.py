@@ -59,7 +59,7 @@ class MyAPWorld(World):
     from .items import FORCED_ITEMS
 
     super().generate_early()
-    if self.options.weight_early_checks:
+    if hasattr(self.options, "weight_early_checks") and self.options.weight_early_checks:
       # Unzip the (item, weight) pairs freshly for each pick so that popping
       # an already-picked item can't desync a shared choices/weights pair --
       # they're always built from the single source of truth in game_config.

@@ -11,7 +11,7 @@ class ProgressionNode(TypedDict):
 
 PROG: list[ProgressionNode] = [
   {
-    "room": "hub",
+    "room": "menu",
     "requires": [
       [],
     ],

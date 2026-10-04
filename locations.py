@@ -5,7 +5,6 @@ from ._progression import PROG
 from BaseClasses import Location
 
 from worlds.AutoWorld import World
-from . import game_data
 
 LOCATION_NAME_TO_ID: dict[str, int] = {}
 
@@ -30,7 +29,7 @@ for thing in PROG:
 
 
 class MyAPLocation(Location):
-  game: str = game_data.GAME
+  game: str = data.GAME
 
 
 def get_location_names_with_ids(location_names: list[str]) -> dict[str, int | None]:
@@ -44,6 +43,21 @@ def create_all_locations(world: World) -> None:
 
 def create_regular_locations(world: World) -> None:
   for locationName, location_id in LOCATION_NAME_TO_ID.items():
+    item_info = locationName.split(" - ", 1)[1]
+
+    # Dynamically evaluate all optional checks defined in game_data.py
+    excluded = False
+    for opt_name, prefixes in data.OPTIONAL_CHECKS.items():
+      if not getattr(world.options, opt_name, True):
+        if item_info.startswith(prefixes):
+          excluded = True
+          break
+
+
+
+    if excluded:
+      continue
+
     location = MyAPLocation(
       world.player,
       locationName,

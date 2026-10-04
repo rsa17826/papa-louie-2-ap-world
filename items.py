@@ -5,7 +5,6 @@ from worlds.AutoWorld import World
 
 from . import game_data as data
 from ._progression import PROG
-from . import game_data
 
 ITEM_NAME_TO_ID: dict[str, int] = {}
 DEFAULT_ITEM_CLASSIFICATIONS: dict[str, ItemClassification] = {}
@@ -32,12 +31,13 @@ def addItem(itemInfo: str):
   global _id_counter
   ITEM_COUNTS[itemInfo] = ITEM_COUNTS.get(itemInfo, 0) + 1
   if itemInfo not in ITEM_NAME_TO_ID:
+    if itemInfo.startswith(data.NON_POOL_PREFIXES):
+      return
+
     if itemInfo.startswith(data.POOL_PROGRESSION_PREFIXES):
       DEFAULT_ITEM_CLASSIFICATIONS[itemInfo] = ItemClassification.progression
       ITEM_NAME_TO_ID[itemInfo] = _id_counter
       _id_counter += 1
-    elif itemInfo.startswith(data.NON_POOL_PREFIXES):
-      return
     else:
       print(itemInfo, "not used")
 
@@ -58,7 +58,7 @@ for thing in PROG:
 
 
 class MyAPItem(Item):
-  game: str = game_data.GAME
+  game: str = data.GAME
 
 
 def get_random_filler_item_name(world: World) -> str:

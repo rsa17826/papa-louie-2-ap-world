@@ -3,7 +3,7 @@ Generic per-game data file.
 
 Nothing in here is a built-in "engine" concept -- REGIONS/CONNECTIONS/EVENTS
 below describe an arbitrary directed graph of regions, however this
-particular game happens to be shaped (a hub with 11 levels, in this case).
+particular game happens to be shaped (a menu with 11 levels, in this case).
 A different game with a totally different topology (a linear world, a big
 open map, a branching tree, whatever) would just populate these same three
 structures differently -- the engine code (locations.py, regions.py,
@@ -35,11 +35,11 @@ from ._progression import PROG
 GAME = "papa-louie-2"
 
 # The region the player starts in / can always return to.
-ORIGIN_REGION: str = "hub"
+ORIGIN_REGION: str = "menu"
 
 # Every region that exists in the world. This is the full node set of the
 # graph -- CONNECTIONS below are the edges.
-REGIONS: list[str] = ["hub"] + [f"level{i}" for i in range(11)]
+REGIONS: list[str] = ["menu"] + [f"level{i}" for i in range(11)]
 
 
 class Connection(TypedDict):
@@ -52,11 +52,11 @@ class Connection(TypedDict):
 
 
 # The directed edges of the region graph. Any topology is fine here: a
-# straight line, a hub-and-spoke (as below), a branching tree, a fully
+# straight line, a menu-and-spoke (as below), a branching tree, a fully
 # connected mesh, one-way shortcuts, etc.
 CONNECTIONS: list[Connection] = [
   {
-    "from_region": "hub",
+    "from_region": "menu",
     "to_region": f"level{i}",
     "name": f"Hub to level{i}",
     "requires": [[f"level:level{i}"]],
@@ -129,11 +129,11 @@ LINKED_EVENT_TEMPLATES: dict[str, str] = {}
 # Name of the boolean world option that, when True, gates completion behind
 # COMPLETION_REQUIRED_ITEMS. Set to None if completion should never be
 # gated by an option (rule is then just always-True).
-COMPLETION_OPTION_NAME: str | None = "all_levels_complete"
-
-# Items (ANDed together) required for completion when COMPLETION_OPTION_NAME
-# is set and that option is enabled.
-COMPLETION_REQUIRED_ITEMS: list[str] = [f"flag:beat level{i}" for i in range(1, 10, 1)]
+COMPLETION_OPTIONS: dict[str, list[list[str]]] = {
+  "all_levels_complete": [
+    [f"level:level{i + 1}" for i in range(5)],
+  ]
+}
 
 
 # ---------------------------------------------------------------------------
@@ -150,7 +150,14 @@ EARLY_CHECK_POOL: list[tuple[str, float]] = []
 from Options import Toggle
 
 OPTIONS = {
-  # "Gameplay": (),
+  "Gameplay": (
+    (
+      "death_link",
+      "Links your fate to other players in the multiworld.\nWhen enabled, if you die, everyone else on Death Link dies too. If they die, you die. Use with caution!",
+      True,
+      Toggle,
+    ),
+  ),
   # "?": (),
   "Win Condition": (
     (
@@ -163,12 +170,6 @@ OPTIONS = {
       "all_achievements",
       "game only won when all achievement checks obtained",
       False,
-      Toggle,
-    ),
-    (
-      "death_link",
-      "Links your fate to other players in the multiworld.\nWhen enabled, if you die, everyone else on Death Link dies too. If they die, you die. Use with caution!",
-      True,
       Toggle,
     ),
   ),
@@ -264,6 +265,43 @@ def validate_config() -> None:
       EVENTS item_name: {sorted(ungranted)}"""
     )
 
+  # --- Every item referenced in ANY requires group -- including groups that
+  #     are not on the "reachable" OR path, like a stray second alternative
+  #     in an OR-of-AND list -- must be an item that CORE_ITEMS or some
+  #     _progression.py node's 'receive' actually lists verbatim. This is
+  #     deliberately narrower than 'granted_items' above (which also allows
+  #     EVENTS item_name): a group referencing a name that's never once
+  #     spelled out in CORE_ITEMS/receive is a broken/typo'd requirement,
+  #     even if the node as a whole is still reachable via a different
+  #     group in the same OR-of-AND list. ---
+  core_and_receive_items: set[str] = set(CORE_ITEMS)
+  for node in PROG:
+    core_and_receive_items.update(node.get("receive", []))
+
+  def _check_requires_groups(source_label: str, requires: list[list[str]] | None) -> None:
+    if not requires:
+      return
+
+    for group in requires:
+      for item in group:
+        base = _base_name(item)
+        if base not in core_and_receive_items:
+          errors.append(f"{source_label} requires group {group} references item '{item}', which is not in CORE_ITEMS or any _progression.py node's 'receive' list.")
+        elif base.startswith(NON_POOL_PREFIXES):
+          errors.append(f"{source_label} requires group {group} references item '{item}', which matches a NON_POOL_PREFIXES prefix -- it's never created as a real pool item, so it can never actually be granted to a player and used to satisfy this requirement.")
+
+
+
+
+  for node in PROG:
+    _check_requires_groups(f"_progression.py node {node}", node.get("requires"))
+
+  for conn in CONNECTIONS:
+    _check_requires_groups(f"CONNECTIONS entry {conn}", conn.get("requires"))
+
+  for event in EVENTS:
+    _check_requires_groups(f"EVENTS entry {event}", event.get("requires"))
+
   # --- CORE_ITEMS should not overlap items already granted via PROG receive
   #     under a location/event prefix, since that would double-declare it. ---
 
@@ -353,9 +391,13 @@ def validate_config() -> None:
 
 
   # --- Completion items must actually be granted somewhere. ---
-  missing_completion_items = set(COMPLETION_REQUIRED_ITEMS) - granted_items
-  if missing_completion_items:
-    errors.append(f"COMPLETION_REQUIRED_ITEMS references item(s) never granted anywhere: {sorted(missing_completion_items)}")
+  for copt, val in COMPLETION_OPTIONS.items():
+    for vval in val:
+      missing_completion_items = set(vval) - granted_items
+      if missing_completion_items:
+        errors.append(f"COMPLETION_OPTIONS[{copt}] references item(s) never granted anywhere: {sorted(missing_completion_items)}")
+
+
 
   if errors:
     raise DataConsistencyError("Data file consistency check failed -- refusing to generate with potentially incorrect data:\n- " + "\n- ".join(errors))
