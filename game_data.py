@@ -91,7 +91,10 @@ EVENTS: list[EventDef] = []
 LOCATION_ITEM_PREFIXES: tuple[str, ...] = ("level:",)
 
 # Prefixes for items that are logic-only events (not real placed locations).
-EVENT_ITEM_PREFIXES: tuple[str, ...] = ("flag:",)
+EVENT_ITEM_PREFIXES: tuple[str, ...] = (
+  "flag:",
+  "move:",
+)
 
 # Prefixes for items that go in the real AP item pool as progression items.
 POOL_PROGRESSION_PREFIXES: tuple[str, ...] = ("level:",)

@@ -4,3 +4,11 @@
 @info remove "$1" when option fixed
 @endregex
 
+@regex "(move:(?!(?:glide|crawl|dbjump|push|stomp|walljump|nothing)")([^"]*))"
+@errgroup 1
+@info invalid move $2
+@endregex
+@regex "(char:(?!(?:marty|rita|prudence|taylor|clover|mindy|akari|zoe|big pauly|kahuna|kingsley|ninjoy|penny|sarge fan|james|captain cori|rico|scooter|connor|peggy|georgito|yippy|greg|boomer|professor fitz|foodini|papa louie|xandra)")([^"]*))"
+@errgroup 1
+@info invalid char $2
+@endregex
