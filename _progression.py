@@ -217,8 +217,246 @@ PROG: list[ProgressionNode] = [
       "move:glide",
     ],
   },
+  {
+    "room": "level1",
+    "requires": [
+      [],
+    ],
+    "receive": [
+      "char:prudence",
+      "char:taylor",
+    ],
+  },
+  {
+    "room": "level1",
+    "requires": [
+      [
+        "move:stomp",
+      ],
+    ],
+    "receive": [
+      "char:clover",
+    ],
+  },
+  {
+    "room": "level1",
+    "requires": [
+      [],
+    ],
+    "receive": [
+      "?:5 red coins",
+    ],
+  },
+  {
+    "room": "level1",
+    "requires": [
+      [],
+    ],
+    "receive": [
+      "?:3 burgers",
+    ],
+  },
+  {
+    "room": "level1",
+    "requires": [
+      [
+        "move:glide",
+      ],
+    ],
+    "receive": [
+      "?:100 coins",
+    ],
+  },
+  {
+    "room": "level2",
+    "requires": [
+      [],
+    ],
+    "receive": [
+      "char:big pauly",
+    ],
+  },
+  {
+    "room": "level2",
+    "requires": [
+      [
+        "move:stomp",
+      ],
+    ],
+    "receive": [
+      "char:mindy",
+    ],
+  },
+  {
+    "room": "level2",
+    "requires": [
+      [
+        "move:glide",
+      ],
+    ],
+    "receive": [
+      "char:akari",
+    ],
+  },
+  {
+    "room": "level2",
+    "requires": [
+      [],
+    ],
+    "receive": [
+      "?:5 flowers",
+    ],
+  },
+  {
+    "room": "level2",
+    "requires": [
+      [
+        "move:stomp",
+      ],
+    ],
+    "receive": [
+      "?:11 burgers",
+    ],
+  },
+  {
+    "room": "level2",
+    "requires": [
+      [
+        "move:crawl",
+      ],
+    ],
+    "receive": [
+      "?:100 coins",
+    ],
+  },
+  {
+    "room": "level3",
+    "requires": [
+      [
+      ],
+    ],
+    "receive": [
+      "char:boomer",
+    ],
+  },
+  {
+    "room": "level3",
+    "requires": [
+      [
+        "move:glide",
+      ],
+    ],
+    "receive": [
+      "char:kahuna",
+    ],
+  },
+  {
+    "room": "level3",
+    "requires": [
+      [
+        "move:crawl",
+      ],
+    ],
+    "receive": [
+      "char:professor fitz",
+    ],
+  },
+  {
+    "room": "level3",
+    "requires": [
+      [
+        "move:stomp",
+      ],
+    ],
+    "receive": [
+      "?:5 helmets",
+    ],
+  },
+  {
+    "room": "level3",
+    "requires": [
+      [
+        "move:glide",
+      ],
+    ],
+    "receive": [
+      "?:11 burgers",
+    ],
+  },
+  {
+    "room": "level3",
+    "requires": [
+      [
+        "move:dbjump",
+      ],
+    ],
+    "receive": [
+      "?:100 coins",
+    ],
+  },
+  {
+    "room": "level4",
+    "requires": [
+      [
+      ],
+    ],
+    "receive": [
+      "char:georgito",
+    ],
+  },
+  {
+    "room": "level4",
+    "requires": [
+      [
+        "move:crawl",
+      ],
+    ],
+    "receive": [
+      "char:foodini",
+    ],
+  },
+  {
+    "room": "level4",
+    "requires": [
+      [
+        "move:dbjump",
+      ],
+    ],
+    "receive": [
+      "char:yippy",
+    ],
+  },
+  {
+    "room": "level4",
+    "requires": [
+      [
+        "move:stomp",
+      ],
+    ],
+    "receive": [
+      "?:5 purple coins",
+    ],
+  },
+  {
+    "room": "level4",
+    "requires": [
+      [
+        "move:crawl",
+      ],
+    ],
+    "receive": [
+      "?:6 burgers",
+    ],
+  },
+  {
+    "room": "level4",
+    "requires": [
+      [
+        "move:push",
+      ],
+    ],
+    "receive": [
+      "?:100 coins",
+    ],
+  },
 ]
-# TODO
-# move:push
-# move:key
-# move:fan
