@@ -64,7 +64,7 @@ class MyAPItem(Item):
 def get_random_filler_item_name(world: World) -> str:
   weights = [getattr(world.options, trap.split(":")[1]) for trap in data.FILLER_ITEMS if hasattr(world.options, trap.split(":")[1])]
   if not weights or sum(weights) == 0:
-    return "trap:nothing"
+    return "filler:nothing"
 
   return world.random.choices(data.FILLER_ITEMS, weights=weights, k=1)[0]
 

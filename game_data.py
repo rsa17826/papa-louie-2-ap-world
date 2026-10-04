@@ -39,7 +39,7 @@ ORIGIN_REGION: str = "menu"
 
 # Every region that exists in the world. This is the full node set of the
 # graph -- CONNECTIONS below are the edges.
-REGIONS: list[str] = ["menu"] + [f"level{i}" for i in range(11)]
+REGIONS: list[str] = ["menu"] + [f"level{i}" for i in range(1, 11, 1)]
 
 
 class Connection(TypedDict):
@@ -52,16 +52,16 @@ class Connection(TypedDict):
 
 
 # The directed edges of the region graph. Any topology is fine here: a
-# straight line, a menu-and-spoke (as below), a branching tree, a fully
+# straight line, a hub-and-spoke (as below), a branching tree, a fully
 # connected mesh, one-way shortcuts, etc.
 CONNECTIONS: list[Connection] = [
   {
     "from_region": "menu",
     "to_region": f"level{i}",
-    "name": f"Hub to level{i}",
+    "name": f"menu to level{i}",
     "requires": [[f"level:level{i}"]],
   }
-  for i in range(1, 10, 1)
+  for i in range(1, 11, 1)
 ]
 
 
@@ -87,14 +87,14 @@ EVENTS: list[EventDef] = []
 # names -- the engine only ever asks "does this name start with a prefix in
 # category X", it never hardcodes what the prefixes themselves are.
 
-# Prefixes for items that get placed as real, shuffled locations.
-LOCATION_ITEM_PREFIXES: tuple[str, ...] = ()
+# Prefixes for checks.
+LOCATION_ITEM_PREFIXES: tuple[str, ...] = ("level:",)
 
 # Prefixes for items that are logic-only events (not real placed locations).
 EVENT_ITEM_PREFIXES: tuple[str, ...] = ("flag:",)
 
 # Prefixes for items that go in the real AP item pool as progression items.
-POOL_PROGRESSION_PREFIXES: tuple[str, ...] = ()
+POOL_PROGRESSION_PREFIXES: tuple[str, ...] = ("level:",)
 
 # Prefixes for items that are never created as real pool items (they're
 # events/locations only, handled elsewhere in the item pool step).
@@ -135,6 +135,7 @@ COMPLETION_OPTIONS: dict[str, list[list[str]]] = {
   ]
 }
 
+OPTIONAL_CHECKS: dict[str, tuple[str, ...]] = {}
 
 # ---------------------------------------------------------------------------
 # Early-check weighting (used by generate_early / weight_early_checks option)
