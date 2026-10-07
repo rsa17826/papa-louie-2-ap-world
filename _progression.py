@@ -16,6 +16,16 @@ PROG: list[ProgressionNode] = [
       [],
     ],
     "receive": [
+      "level:level0",
+    ],
+  },
+  {
+    "room": "level0",
+    "requires": [
+      [],
+    ],
+    "receive": [
+      "flag:beat level0",
       "level:level1",
     ],
   },
@@ -106,16 +116,6 @@ PROG: list[ProgressionNode] = [
     ],
     "receive": [
       "flag:beat level9",
-      "level:level10",
-    ],
-  },
-  {
-    "room": "level10",
-    "requires": [
-      [],
-    ],
-    "receive": [
-      "flag:beat level10",
     ],
   },
   {
@@ -260,7 +260,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level1",
+    "room": "level0",
     "requires": [
       [],
     ],
@@ -269,7 +269,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level1",
+    "room": "level0",
     "requires": [
       [],
     ],
@@ -278,7 +278,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level1",
+    "room": "level0",
     "requires": [
       [
         "move:stomp",
@@ -289,36 +289,36 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level1",
+    "room": "level0",
     "requires": [
       [],
     ],
     "receive": [
-      "?:5 red coins",
+      "collectCheck:5 red coins",
     ],
   },
   {
-    "room": "level1",
+    "room": "level0",
     "requires": [
       [],
     ],
     "receive": [
-      "?:3 burgers",
+      "collectCheck:3 burgers",
     ],
   },
   {
-    "room": "level1",
+    "room": "level0",
     "requires": [
       [
         "move:glide",
       ],
     ],
     "receive": [
-      "?:100 coins",
+      "collectCheck:100 coins",
     ],
   },
   {
-    "room": "level2",
+    "room": "level1",
     "requires": [
       [],
     ],
@@ -327,7 +327,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level2",
+    "room": "level1",
     "requires": [
       [
         "move:stomp",
@@ -338,7 +338,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level2",
+    "room": "level1",
     "requires": [
       [
         "move:glide",
@@ -349,38 +349,38 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level2",
+    "room": "level1",
     "requires": [
       [],
     ],
     "receive": [
-      "?:5 flowers",
+      "collectCheck:5 flowers",
     ],
   },
   {
-    "room": "level2",
+    "room": "level1",
     "requires": [
       [
         "move:stomp",
       ],
     ],
     "receive": [
-      "?:11 burgers",
+      "collectCheck:11 burgers",
     ],
   },
   {
-    "room": "level2",
+    "room": "level1",
     "requires": [
       [
         "move:crawl",
       ],
     ],
     "receive": [
-      "?:100 coins",
+      "collectCheck:100 coins",
     ],
   },
   {
-    "room": "level3",
+    "room": "level2",
     "requires": [
       [],
     ],
@@ -389,7 +389,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level3",
+    "room": "level2",
     "requires": [
       [
         "move:glide",
@@ -400,7 +400,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level3",
+    "room": "level2",
     "requires": [
       [
         "move:crawl",
@@ -411,40 +411,40 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level3",
+    "room": "level2",
     "requires": [
       [
         "move:stomp",
       ],
     ],
     "receive": [
-      "?:5 helmets",
+      "collectCheck:5 helmets",
     ],
   },
   {
-    "room": "level3",
+    "room": "level2",
     "requires": [
       [
         "move:glide",
       ],
     ],
     "receive": [
-      "?:11 burgers",
+      "collectCheck:11 burgers",
     ],
   },
   {
-    "room": "level3",
+    "room": "level2",
     "requires": [
       [
         "move:dbjump",
       ],
     ],
     "receive": [
-      "?:100 coins",
+      "collectCheck:100 coins",
     ],
   },
   {
-    "room": "level4",
+    "room": "level3",
     "requires": [
       [],
     ],
@@ -453,7 +453,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level4",
+    "room": "level3",
     "requires": [
       [
         "move:crawl",
@@ -464,7 +464,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level4",
+    "room": "level3",
     "requires": [
       [
         "move:dbjump",
@@ -475,40 +475,40 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level4",
+    "room": "level3",
     "requires": [
       [
         "move:stomp",
       ],
     ],
     "receive": [
-      "?:5 purple coins",
+      "collectCheck:5 purple coins",
     ],
   },
   {
-    "room": "level4",
+    "room": "level3",
     "requires": [
       [
         "move:crawl",
       ],
     ],
     "receive": [
-      "?:6 burgers",
+      "collectCheck:6 burgers",
     ],
   },
   {
-    "room": "level4",
+    "room": "level3",
     "requires": [
       [
         "move:push",
       ],
     ],
     "receive": [
-      "?:100 coins",
+      "collectCheck:100 coins",
     ],
   },
   {
-    "room": "level5",
+    "room": "level4",
     "requires": [
       [],
     ],
@@ -517,7 +517,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level5",
+    "room": "level4",
     "requires": [
       [
         "move:dbjump",
@@ -528,7 +528,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level5",
+    "room": "level4",
     "requires": [
       [
         "move:push",
@@ -539,40 +539,40 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level5",
+    "room": "level4",
     "requires": [
       [
         "move:stomp",
       ],
     ],
     "receive": [
-      "?:5 worms",
+      "collectCheck:5 worms",
     ],
   },
   {
-    "room": "level5",
+    "room": "level4",
     "requires": [
       [
         "move:glide",
       ],
     ],
     "receive": [
-      "?:8 burgers",
+      "collectCheck:8 burgers",
     ],
   },
   {
-    "room": "level5",
+    "room": "level4",
     "requires": [
       [
         "move:walljump",
       ],
     ],
     "receive": [
-      "?:100 coins",
+      "collectCheck:100 coins",
     ],
   },
   {
-    "room": "level6",
+    "room": "level5",
     "requires": [
       [],
     ],
@@ -581,7 +581,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level6",
+    "room": "level5",
     "requires": [
       [
         "move:push",
@@ -592,7 +592,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level6",
+    "room": "level5",
     "requires": [
       [
         "move:walljump",
@@ -603,40 +603,40 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level6",
+    "room": "level5",
     "requires": [
       [
         "move:glide",
       ],
     ],
     "receive": [
-      "?:5 balloons",
+      "collectCheck:5 balloons",
     ],
   },
   {
-    "room": "level6",
+    "room": "level5",
     "requires": [
       [
         "move:crawl",
       ],
     ],
     "receive": [
-      "?:10 burgers",
+      "collectCheck:10 burgers",
     ],
   },
   {
-    "room": "level6",
+    "room": "level5",
     "requires": [
       [
         "move:stomp",
       ],
     ],
     "receive": [
-      "?:100 coins",
+      "collectCheck:100 coins",
     ],
   },
   {
-    "room": "level7",
+    "room": "level6",
     "requires": [
       [],
     ],
@@ -645,7 +645,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level7",
+    "room": "level6",
     "requires": [
       [
         "move:walljump",
@@ -656,7 +656,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level7",
+    "room": "level6",
     "requires": [
       [
         "move:stomp",
@@ -667,40 +667,40 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level7",
+    "room": "level6",
     "requires": [
       [
         "move:glide",
       ],
     ],
     "receive": [
-      "?:5 cans",
+      "collectCheck:5 cans",
     ],
   },
   {
-    "room": "level7",
+    "room": "level6",
     "requires": [
       [
         "move:push",
       ],
     ],
     "receive": [
-      "?:13 burgers",
+      "collectCheck:13 burgers",
     ],
   },
   {
-    "room": "level7",
+    "room": "level6",
     "requires": [
       [
         "move:dbjump",
       ],
     ],
     "receive": [
-      "?:100 coins",
+      "collectCheck:100 coins",
     ],
   },
   {
-    "room": "level8",
+    "room": "level7",
     "requires": [
       [],
     ],
@@ -709,7 +709,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level8",
+    "room": "level7",
     "requires": [
       [
         "move:walljump",
@@ -720,7 +720,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level8",
+    "room": "level7",
     "requires": [
       [
         "move:crawl",
@@ -731,40 +731,40 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level8",
+    "room": "level7",
     "requires": [
       [
         "move:stomp",
       ],
     ],
     "receive": [
-      "?:5 onion coins",
+      "collectCheck:5 onion coins",
     ],
   },
   {
-    "room": "level8",
+    "room": "level7",
     "requires": [
       [
         "move:dbjump",
       ],
     ],
     "receive": [
-      "?:12 burgers",
+      "collectCheck:12 burgers",
     ],
   },
   {
-    "room": "level8",
+    "room": "level7",
     "requires": [
       [
         "move:glide",
       ],
     ],
     "receive": [
-      "?:100 coins",
+      "collectCheck:100 coins",
     ],
   },
   {
-    "room": "level9",
+    "room": "level8",
     "requires": [
       [],
     ],

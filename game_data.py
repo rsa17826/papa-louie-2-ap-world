@@ -39,7 +39,7 @@ ORIGIN_REGION: str = "menu"
 
 # Every region that exists in the world. This is the full node set of the
 # graph -- CONNECTIONS below are the edges.
-REGIONS: list[str] = ["menu"] + [f"level{i}" for i in range(1, 11, 1)]
+REGIONS: list[str] = ["menu"] + [f"level{i}" for i in range(0, 10, 1)]
 
 
 class Connection(TypedDict):
@@ -61,7 +61,7 @@ CONNECTIONS: list[Connection] = [
     "name": f"menu to level{i}",
     "requires": [[f"level:level{i}"]],
   }
-  for i in range(1, 11, 1)
+  for i in range(0, 10, 1)
 ]
 
 
@@ -90,7 +90,7 @@ EVENTS: list[EventDef] = []
 # Prefixes for checks.
 LOCATION_ITEM_PREFIXES: tuple[str, ...] = (
   "level:",
-  "?:",
+  "collectCheck:",
   "char:",
 )
 
@@ -141,7 +141,7 @@ LINKED_EVENT_TEMPLATES: dict[str, str] = {}
 # gated by an option (rule is then just always-True).
 COMPLETION_OPTIONS: dict[str, list[list[str]]] = {
   "all_levels_complete": [
-    [f"level:level{i}" for i in range(1, 11, 1)],
+    [f"level:level{i}" for i in range(0, 10, 1)],
   ]
 }
 
@@ -219,12 +219,9 @@ def validate_config() -> None:
       if conn[key] not in region_set:
         errors.append(f"CONNECTIONS entry {conn} references region '{conn[key]}' not declared in REGIONS.")
 
-
-
   for event in EVENTS:
     if event["room"] not in region_set:
       errors.append(f"EVENTS entry {event} references room '{event['room']}' not declared in REGIONS.")
-
 
   seen_event_locations: set[str] = set()
   for event in EVENTS:
@@ -238,7 +235,6 @@ def validate_config() -> None:
   for node in PROG:
     if node["room"] not in region_set:
       errors.append(f"_progression.py references unknown room '{node['room']}' not declared in REGIONS.")
-
 
   # --- Build the universe of items that are actually ever granted ---
   granted_items: set[str] = set(CORE_ITEMS)
@@ -254,7 +250,6 @@ def validate_config() -> None:
   for node in PROG:
     for group in node.get("requires", []):
       referenced_items.update(group)
-
 
   for conn in CONNECTIONS:
     referenced_items.update(_all_requires_items(conn.get("requires")))
@@ -301,9 +296,6 @@ def validate_config() -> None:
         elif base.startswith(NON_POOL_PREFIXES):
           errors.append(f"{source_label} requires group {group} references item '{item}', which matches a NON_POOL_PREFIXES prefix -- it's never created as a real pool item, so it can never actually be granted to a player and used to satisfy this requirement.")
 
-
-
-
   for node in PROG:
     _check_requires_groups(f"_progression.py node {node}", node.get("requires"))
 
@@ -339,8 +331,6 @@ def validate_config() -> None:
       else:
         seen_location_pairs[key] = node
 
-
-
   # --- EVENTS locations must not collide with PROG-derived (room, item)
   #     locations either -- same room + same underlying item name means the
   #     event location and a PROG receive-derived location would be the
@@ -355,13 +345,11 @@ def validate_config() -> None:
         both would resolve to the same (room, item) location."""
       )
 
-
   # --- EARLY_CHECK_LOCATIONS must correspond to a real (room, receive) pair. ---
   all_receive_pairs = {(node["room"], item) for node in PROG for item in node.get("receive", [])}
   for room, receive_name in EARLY_CHECK_LOCATIONS:
     if (room, receive_name) not in all_receive_pairs:
       errors.append(f"EARLY_CHECK_LOCATIONS entry ('{room}', '{receive_name}') does not match any (room, receive) pair declared in _progression.py.")
-
 
   # --- EARLY_CHECK_POOL items must be real, known items. ---
   early_pool_names = {name for name, _weight in EARLY_CHECK_POOL}
@@ -397,18 +385,12 @@ def validate_config() -> None:
               LINKED_EVENT_TEMPLATES, but no such location is declared in EVENTS."""
             )
 
-
-
-
-
   # --- Completion items must actually be granted somewhere. ---
   for copt, val in COMPLETION_OPTIONS.items():
     for vval in val:
       missing_completion_items = set(vval) - granted_items
       if missing_completion_items:
         errors.append(f"COMPLETION_OPTIONS[{copt}] references item(s) never granted anywhere: {sorted(missing_completion_items)}")
-
-
 
   if errors:
     raise DataConsistencyError("Data file consistency check failed -- refusing to generate with potentially incorrect data:\n- " + "\n- ".join(errors))
