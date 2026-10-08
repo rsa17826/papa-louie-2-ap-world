@@ -1,11 +1,12 @@
+#!../../.venv/bin/python
 #!/usr/bin/env python3
 
-import sys
+import importlib
 from pathlib import Path
-
+import sys
 import yaml
 
-ARCHIPELAGO = Path("~/projects/Archipelago").expanduser()
+ARCHIPELAGO = Path("~/projects/MultiworldGG/").expanduser()
 WORLDS_DIR = ARCHIPELAGO / "worlds"
 
 
@@ -50,8 +51,13 @@ def main():
     print(f"Could not load Archipelago worlds: {e}", file=sys.stderr)
     sys.exit(1)
 
-  # Find the registered world whose Python module lives in the
-  # directory supplied on the command line.
+  # Explicitly attempt to import the target world module
+  try:
+    importlib.import_module(f"worlds.{name}")
+
+  except Exception as e:
+    print(f"Warning: Could not directly import worlds.{name}: {e}", file=sys.stderr)
+
   world_type = None
 
   for _game, candidate in AutoWorldRegister.world_types.items():
@@ -75,7 +81,6 @@ def main():
     sys.exit(1)
 
   options = world_type.options_dataclass
-
   defaults = {}
 
   for option_name, option in options.type_hints.items():
