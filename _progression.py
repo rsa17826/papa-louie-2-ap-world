@@ -397,6 +397,7 @@ PROG: list[ProgressionNode] = [
       [],
     ],
     "receive": [
+      # REVIEW can't kill saucers in any way so force other char than this one if that kill required
       "char:boomer",
     ],
   },
