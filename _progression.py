@@ -252,6 +252,7 @@ PROG: list[ProgressionNode] = [
         "char:papa louie",
       ],
       [
+        # REVIEW has higher jump, test both with and without, and use char:xandra instead of move:glide if required
         "char:xandra",
       ],
     ],
@@ -335,6 +336,17 @@ PROG: list[ProgressionNode] = [
     ],
     "receive": [
       "char:mindy",
+    ],
+  },
+  {
+    "room": "level1",
+    "requires": [
+      [
+        "move:glide",
+      ],
+    ],
+    "receive": [
+      "collectCheck:fizzocan",
     ],
   },
   {
@@ -668,6 +680,17 @@ PROG: list[ProgressionNode] = [
   },
   {
     "room": "level6",
+    "requires": [
+      [
+        "move:glide",
+      ],
+    ],
+    "receive": [
+      "collectCheck:5 cans",
+    ],
+  },
+  {
+    "room": "level1",
     "requires": [
       [
         "move:glide",
