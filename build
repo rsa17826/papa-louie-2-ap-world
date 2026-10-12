@@ -3,8 +3,8 @@ trap 'rm -f ~/projects/MultiworldGG/output/apworlds/papa-louie-2.apworld; exit 0
 if test -n "$VERSION"; then
   sed -i 's/"world_version": .*,/"world_version": "'"$VERSION"'.0.0",/' archipelago.json
 fi
-python3.13 make_apworlds.py papa-louie-2 &>/dev/null
-generate-global-tracker-data papa-louie-2 &>/dev/null
+../../.venv/bin/python ../vex2/make_apworlds.py papa-louie-2 &>/dev/tty
+generate-global-tracker-data papa-louie-2 &>/dev/tty
 echo ~/projects/MultiworldGG/output/apworlds/papa-louie-2.apworld
 
 while :; do
