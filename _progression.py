@@ -896,12 +896,11 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "menu",
+    "room": "level9",
     "requires": [
       [],
     ],
     "receive": [
-      # TODO where this at?
       "char:xandra",
     ],
   },
