@@ -413,7 +413,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level2",
+    "room": "level1",
     "requires": [
       [
         "move:nothing",
@@ -424,7 +424,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level3",
+    "room": "level2",
     "requires": [
       [
         "move:nothing",
@@ -435,7 +435,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level4",
+    "room": "level3",
     "requires": [
       [
         "move:nothing",
@@ -446,7 +446,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level5",
+    "room": "level4",
     "requires": [
       [
         "move:nothing",
@@ -457,7 +457,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level6",
+    "room": "level5",
     "requires": [
       [
         "move:nothing",
@@ -468,7 +468,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level7",
+    "room": "level6",
     "requires": [
       [
         "move:nothing",
@@ -479,7 +479,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level8",
+    "room": "level7",
     "requires": [
       [
         "move:nothing",
@@ -490,7 +490,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level9",
+    "room": "level8",
     "requires": [
       [
         "move:nothing",
@@ -501,7 +501,7 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level10",
+    "room": "level9",
     "requires": [
       [
         "move:nothing",
@@ -509,6 +509,17 @@ PROG: list[ProgressionNode] = [
     ],
     "receive": [
       "powerless:level9",
+    ],
+  },
+  {
+    "room": "level10",
+    "requires": [
+      [
+        "move:nothing",
+      ],
+    ],
+    "receive": [
+      "powerless:level10",
     ],
   },
   {
