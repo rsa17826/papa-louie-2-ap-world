@@ -39,7 +39,7 @@ ORIGIN_REGION: str = "menu"
 
 # Every region that exists in the world. This is the full node set of the
 # graph -- CONNECTIONS below are the edges.
-REGIONS: list[str] = ["menu"] + [f"level{i}" for i in range(0, 10, 1)]
+REGIONS: list[str] = ["menu"] + [f"level{i}" for i in range(1, 11, 1)]
 
 
 class Connection(TypedDict):
@@ -59,9 +59,9 @@ CONNECTIONS: list[Connection] = [
     "from_region": "menu",
     "to_region": f"level{i}",
     "name": f"menu to level{i}",
-    "requires": [[f"level:level{i}"]],
+    "requires": [[f"unlockedLevel:level{i}"]],
   }
-  for i in range(0, 10, 1)
+  for i in range(1, 11, 1)
 ]
 
 
@@ -89,7 +89,7 @@ EVENTS: list[EventDef] = []
 
 # Prefixes for checks.
 LOCATION_ITEM_PREFIXES: tuple[str, ...] = (
-  "level:",
+  "unlockedLevel:",
   "collectCheck:",
   "char:",
   "powerless:",
@@ -103,7 +103,7 @@ EVENT_ITEM_PREFIXES: tuple[str, ...] = (
 
 # Prefixes for items that go in the real AP item pool as progression items.
 POOL_PROGRESSION_PREFIXES: tuple[str, ...] = (
-  "level:",
+  "unlockedLevel:",
   "char:",
 )
 
@@ -142,7 +142,7 @@ LINKED_EVENT_TEMPLATES: dict[str, str] = {}
 # gated by an option (rule is then just always-True).
 COMPLETION_OPTIONS: dict[str, list[list[str]]] = {
   "all_levels_complete": [
-    [f"level:level{i}" for i in range(0, 10, 1)],
+    [f"flag:beat level{i}" for i in range(1, 11, 1)],
   ]
 }
 
