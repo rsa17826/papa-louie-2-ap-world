@@ -22,7 +22,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level1",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "flag:beat level1",
@@ -32,7 +34,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level2",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "flag:beat level2",
@@ -42,7 +46,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level3",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "flag:beat level3",
@@ -52,7 +58,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level4",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "flag:beat level4",
@@ -62,7 +70,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level5",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "flag:beat level5",
@@ -72,7 +82,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level6",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "flag:beat level6",
@@ -82,7 +94,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level7",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "flag:beat level7",
@@ -92,7 +106,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level8",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "flag:beat level8",
@@ -102,7 +118,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level9",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "flag:beat level9",
@@ -112,7 +130,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level10",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "flag:beat level10",
@@ -282,6 +302,7 @@ PROG: list[ProgressionNode] = [
     "room": "level1",
     "requires": [
       [
+        "flag:hasChar",
         "move:stomp",
       ],
     ],
@@ -292,7 +313,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level1",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "collectCheck:5 red coins",
@@ -301,7 +324,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level1",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "collectCheck:3 burgers",
@@ -312,6 +337,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:glide",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -321,7 +347,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level2",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "char:big pauly",
@@ -332,6 +360,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:stomp",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -339,10 +368,106 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
+    "room": "menu",
+    "requires": [
+      [
+        "char:marty",
+      ],
+      [
+        "char:rita",
+      ],
+      [
+        "char:prudence",
+      ],
+      [
+        "char:taylor",
+      ],
+      [
+        "char:clover",
+      ],
+      [
+        "char:mindy",
+      ],
+      [
+        "char:akari",
+      ],
+      [
+        "char:zoe",
+      ],
+      [
+        "char:big pauly",
+      ],
+      [
+        "char:kahuna",
+      ],
+      [
+        "char:kingsley",
+      ],
+      [
+        "char:ninjoy",
+      ],
+      [
+        "char:penny",
+      ],
+      [
+        "char:sarge fan",
+      ],
+      [
+        "char:james",
+      ],
+      [
+        "char:captain cori",
+      ],
+      [
+        "char:rico",
+      ],
+      [
+        "char:scooter",
+      ],
+      [
+        "char:connor",
+      ],
+      [
+        "char:peggy",
+      ],
+      [
+        "char:georgito",
+      ],
+      [
+        "char:yippy",
+      ],
+      [
+        "char:greg",
+      ],
+      [
+        "char:boomer",
+      ],
+      [
+        "char:professor fitz",
+      ],
+      [
+        "char:foodini",
+      ],
+      [
+        "char:papa louie",
+      ],
+      [
+        "char:xandra",
+      ],
+      [
+        "char:marty",
+      ],
+    ],
+    "receive": [
+      "flag:hasChar",
+    ],
+  },
+  {
     "room": "level2",
     "requires": [
       [
         "move:glide",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -373,6 +498,7 @@ PROG: list[ProgressionNode] = [
     "room": "level2",
     "requires": [
       [
+        "flag:hasChar",
         "move:stomp",
       ],
     ],
@@ -384,6 +510,7 @@ PROG: list[ProgressionNode] = [
     "room": "level2",
     "requires": [
       [
+        "flag:hasChar",
         "move:crawl",
       ],
     ],
@@ -394,7 +521,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level3",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       # REVIEW can't kill saucers in any way so force other char than this one if that kill required
@@ -406,6 +535,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:glide",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -417,6 +547,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:nothing",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -428,6 +559,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:nothing",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -439,6 +571,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:nothing",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -450,6 +583,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:nothing",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -461,6 +595,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:nothing",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -472,6 +607,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:nothing",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -483,6 +619,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:nothing",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -494,6 +631,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:nothing",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -505,6 +643,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:nothing",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -516,6 +655,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:nothing",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -527,6 +667,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:crawl",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -538,6 +679,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:stomp",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -549,6 +691,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:glide",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -560,6 +703,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:dbjump",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -569,7 +713,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level4",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "char:georgito",
@@ -580,6 +726,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:crawl",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -591,6 +738,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:dbjump",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -602,6 +750,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:stomp",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -613,6 +762,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:crawl",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -624,6 +774,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:push",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -633,7 +784,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level5",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "char:scooter",
@@ -644,6 +797,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:dbjump",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -655,6 +809,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:push",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -666,6 +821,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:stomp",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -677,6 +833,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:glide",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -688,6 +845,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:walljump",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -697,7 +855,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level6",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "char:james",
@@ -708,6 +868,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:push",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -719,6 +880,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:walljump",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -730,6 +892,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:glide",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -741,6 +904,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:crawl",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -752,6 +916,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:stomp",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -761,7 +926,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level7",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "char:ninjoy",
@@ -772,6 +939,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:walljump",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -783,6 +951,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:stomp",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -794,6 +963,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:glide",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -805,6 +975,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:glide",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -816,6 +987,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:push",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -827,6 +999,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:dbjump",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -836,7 +1009,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level8",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "char:sarge fan",
@@ -847,6 +1022,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:walljump",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -858,6 +1034,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:crawl",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -869,6 +1046,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:stomp",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -880,6 +1058,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:dbjump",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -891,6 +1070,7 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:glide",
+        "flag:hasChar",
       ],
     ],
     "receive": [
@@ -900,7 +1080,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level9",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "char:papa louie",
@@ -909,7 +1091,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "level10",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "char:xandra",
@@ -918,7 +1102,9 @@ PROG: list[ProgressionNode] = [
   {
     "room": "menu",
     "requires": [
-      [],
+      [
+        "flag:hasChar",
+      ],
     ],
     "receive": [
       "char:marty",
