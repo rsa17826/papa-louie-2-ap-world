@@ -535,6 +535,43 @@ PROG: list[ProgressionNode] = [
     "requires": [
       [
         "move:glide",
+      ],
+      [
+        "move:dbjump",
+      ],
+    ],
+    "receive": [
+      "coinless:level3",
+    ],
+  },
+  {
+    "room": "level5",
+    "requires": [
+      [
+        "move:glide",
+      ],
+    ],
+    "receive": [
+      "coinless:level5",
+    ],
+  },
+  {
+    "room": "level8",
+    "requires": [
+      [
+        "move:glide",
+        "move:walljump",
+      ],
+    ],
+    "receive": [
+      "coinless:level8",
+    ],
+  },
+  {
+    "room": "level3",
+    "requires": [
+      [
+        "move:glide",
         "flag:hasChar",
       ],
     ],

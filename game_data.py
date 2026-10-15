@@ -93,6 +93,7 @@ LOCATION_ITEM_PREFIXES: tuple[str, ...] = (
   "collectCheck:",
   "char:",
   "powerless:",
+  "coinless:",
 )
 
 # Prefixes for items that are logic-only events (not real placed locations).
