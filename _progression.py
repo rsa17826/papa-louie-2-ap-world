@@ -1008,18 +1008,6 @@ PROG: list[ProgressionNode] = [
     ],
   },
   {
-    "room": "level2",
-    "requires": [
-      [
-        "move:glide",
-        "flag:hasChar",
-      ],
-    ],
-    "receive": [
-      "collectCheck:5 cans",
-    ],
-  },
-  {
     "room": "level7",
     "requires": [
       [
