@@ -1089,10 +1089,6 @@ PROG: list[ProgressionNode] = [
         "move:dbjump",
         "flag:hasChar",
       ],
-      [
-        "char:xandra",
-        "flag:hasChar",
-      ],
     ],
     "receive": [
       "collectCheck:12 burgers",
