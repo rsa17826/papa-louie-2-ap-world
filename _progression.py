@@ -233,6 +233,10 @@ PROG: list[ProgressionNode] = [
       [
         "char:peggy",
       ],
+      [
+        # NOTE jumps as high as dbjumpers
+        "char:xandra",
+      ],
     ],
     "receive": [
       "move:dbjump",
